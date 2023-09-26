@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaba.Infrastructure.Loggin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaba.Infrastructure.Logging.Tests", "Infrastructure\tests\Adaba.Infrastructure.Logging.Tests\Adaba.Infrastructure.Logging.Tests.csproj", "{4DC790B6-A766-4BCC-B8EB-A78A88E416CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cerber.Api.Host.Tests", "Cerber\tests\Cerber.Api.Host.Tests\Cerber.Api.Host.Tests.csproj", "{9D9C6CA2-E5B2-47B6-9910-46142EF31F04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,7 @@ Global
 		{6FB69C0D-7566-4445-94CB-194C2A6AEC68} = {C61C40B8-132C-484E-B311-9E7B6A7B691A}
 		{C38DC1CC-AD24-4282-9405-70569707FB66} = {1401BE4E-5CBC-4113-8924-D6101E7A2693}
 		{4DC790B6-A766-4BCC-B8EB-A78A88E416CF} = {1401BE4E-5CBC-4113-8924-D6101E7A2693}
+		{9D9C6CA2-E5B2-47B6-9910-46142EF31F04} = {C61C40B8-132C-484E-B311-9E7B6A7B691A}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FD175AD8-E92A-4B94-A8A2-ED76812520A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -40,5 +43,9 @@ Global
 		{4DC790B6-A766-4BCC-B8EB-A78A88E416CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DC790B6-A766-4BCC-B8EB-A78A88E416CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DC790B6-A766-4BCC-B8EB-A78A88E416CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D9C6CA2-E5B2-47B6-9910-46142EF31F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D9C6CA2-E5B2-47B6-9910-46142EF31F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D9C6CA2-E5B2-47B6-9910-46142EF31F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D9C6CA2-E5B2-47B6-9910-46142EF31F04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
