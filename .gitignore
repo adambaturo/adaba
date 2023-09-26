@@ -395,4 +395,15 @@ FodyWeavers.xsd
 *.msp
 
 # JetBrains Rider
+.idea/
 *.sln.iml
+/shelf/
+/workspace.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.Adaba.iml
+/modules.xml
+/httpRequests/
+/dataSources/
+/dataSources.local.xml
+

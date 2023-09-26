@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1401BE4E-5CBC-4113-8924-D6101E7A2693}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cerber", "Cerber", "{C61C40B8-132C-484E-B311-9E7B6A7B691A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cerber.Api.Host", "Cerber\src\Cerber.Api.Host\Cerber.Api.Host.csproj", "{FD175AD8-E92A-4B94-A8A2-ED76812520A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cerber.Api.Database", "Cerber\src\Cerber.Api.Database\Cerber.Api.Database.csproj", "{6FB69C0D-7566-4445-94CB-194C2A6AEC68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaba.Infrastructure.Logging", "Infrastructure\src\Adaba.Infrastructure.Logging\Adaba.Infrastructure.Logging.csproj", "{C38DC1CC-AD24-4282-9405-70569707FB66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD175AD8-E92A-4B94-A8A2-ED76812520A5} = {C61C40B8-132C-484E-B311-9E7B6A7B691A}
+		{6FB69C0D-7566-4445-94CB-194C2A6AEC68} = {C61C40B8-132C-484E-B311-9E7B6A7B691A}
+		{C38DC1CC-AD24-4282-9405-70569707FB66} = {1401BE4E-5CBC-4113-8924-D6101E7A2693}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD175AD8-E92A-4B94-A8A2-ED76812520A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD175AD8-E92A-4B94-A8A2-ED76812520A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD175AD8-E92A-4B94-A8A2-ED76812520A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD175AD8-E92A-4B94-A8A2-ED76812520A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB69C0D-7566-4445-94CB-194C2A6AEC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB69C0D-7566-4445-94CB-194C2A6AEC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB69C0D-7566-4445-94CB-194C2A6AEC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB69C0D-7566-4445-94CB-194C2A6AEC68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C38DC1CC-AD24-4282-9405-70569707FB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38DC1CC-AD24-4282-9405-70569707FB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38DC1CC-AD24-4282-9405-70569707FB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38DC1CC-AD24-4282-9405-70569707FB66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
