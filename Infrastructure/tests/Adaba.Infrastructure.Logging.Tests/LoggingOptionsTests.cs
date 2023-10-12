@@ -2,18 +2,20 @@ namespace Adaba.Infrastructure.Logging.Tests;
 
 public class LoggingOptionsTests
 {
-    [Test]
+    [Fact]
     public void WhenOptionsCreated_DefaultValuesShouldBeSet()
     {
         var sut = new LoggingOptions();
         Assert.Multiple(() =>
         {
-            Assert.That(sut.RemoveLineBreaksFromRequest, Is.True);
-            Assert.That(sut.RemoveLineBreaksFromResponse, Is.True);
-            Assert.That(sut.IncludeQueryInRequestPath, Is.True);
-            Assert.That(sut.MaxRequestBodyLog, Is.EqualTo(256));
-            Assert.That(sut.MaxResponseBodyLog, Is.EqualTo(256));
-            Assert.That(string.IsNullOrWhiteSpace(sut.MessageTemplate), Is.False);
+            Assert.Multiple(
+                () => Assert.True(sut.RemoveLineBreaksFromRequest),
+                () => Assert.True(sut.RemoveLineBreaksFromResponse),
+                () => Assert.True(sut.IncludeQueryInRequestPath),
+                () => Assert.Equal(256, sut.MaxRequestBodyLog),
+                () => Assert.Equal(256, sut.MaxResponseBodyLog),
+                () => Assert.False(string.IsNullOrWhiteSpace(sut.MessageTemplate))
+            );
         });
     }
 }

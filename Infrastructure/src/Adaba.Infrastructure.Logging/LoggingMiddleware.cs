@@ -40,7 +40,6 @@ public class LoggingMiddleware
                 bytesCount += readResult.Buffer.Length;
                 builder.Append(Encoding.UTF8.GetString(readResult.Buffer.ToArray(), 0, maxLength));
             }
-
             reader.AdvanceTo(readResult.Buffer.Start, readResult.Buffer.End);
             if (readResult.IsCanceled || readResult.IsCompleted || bytesCount > maxLength + 1)
             {
@@ -68,7 +67,6 @@ public class LoggingMiddleware
         {
             return Empty;
         }
-
         try
         {
             var buffer = new byte[maxLength + 1].AsMemory();

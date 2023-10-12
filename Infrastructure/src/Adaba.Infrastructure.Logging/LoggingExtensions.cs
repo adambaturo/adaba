@@ -1,7 +1,5 @@
 ﻿using System.Diagnostics;
-using System.Net.Quic;
 using System.Reflection;
-using System.Text;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +14,7 @@ public static class LoggingExtensions
 {
     public static void AddStandardLogging(this WebApplicationBuilder webAppBuilder, string? environment)
     {
-        webAppBuilder.Host.UseSerilog((_, ctx, config) =>
+        webAppBuilder.Host.UseSerilog((_, _, config) =>
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) ??
@@ -34,7 +32,8 @@ public static class LoggingExtensions
         });
     }
 
-    public static void AddStandardHttpLogging(this WebApplicationBuilder webAppBuilder, string? configSectionName = default)
+    public static void AddStandardHttpLogging(this WebApplicationBuilder webAppBuilder,
+        string? configSectionName = default)
     {
         webAppBuilder.Services.Configure<LoggingOptions>(
             webAppBuilder.Configuration.GetSection(configSectionName ?? "HttpLogging"));
@@ -43,7 +42,8 @@ public static class LoggingExtensions
     public static void UseStandardHttpLogging(this WebApplication app)
     {
         var httpLoggingOptions = app.Services.GetRequiredService<IOptions<LoggingOptions>>();
-        app.UseSerilogRequestLogging(options => {
+        app.UseSerilogRequestLogging(options =>
+        {
             options.IncludeQueryInRequestPath = httpLoggingOptions.Value.IncludeQueryInRequestPath;
             options.EnrichDiagnosticContext = EnrichFromRequest;
             options.GetLevel = GetLogLevelForRequestLogging;
@@ -56,7 +56,7 @@ public static class LoggingExtensions
     {
         var appVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location);
         return (
-            appVersion.ProductName ?? string.Empty, 
+            appVersion.ProductName ?? string.Empty,
             appVersion.FileVersion ?? string.Empty,
             appVersion.ProductVersion ?? string.Empty);
     });
@@ -89,13 +89,16 @@ public static class LoggingExtensions
         {
             diagnosticContext.Set("EndpointName", endpoint.DisplayName);
         }
-        diagnosticContext.Set("RequestHeaders", string.Join(";", httpContext.Request.Headers.Select(h => $"{h.Key}={h.Value}")));
-        diagnosticContext.Set("ResponseHeaders", string.Join(";", httpContext.Response.Headers.Select(h => $"{h.Key}={h.Value}")));
+        diagnosticContext.Set("RequestHeaders",
+            string.Join(";", httpContext.Request.Headers.Select(h => $"{h.Key}={h.Value}")));
+        diagnosticContext.Set("ResponseHeaders",
+            string.Join(";", httpContext.Response.Headers.Select(h => $"{h.Key}={h.Value}")));
     }
 
     private static bool IsHealthCheckEndpoint(HttpContext ctx)
     {
         var endpoint = ctx.GetEndpoint();
-        return endpoint != null && string.Equals(endpoint.DisplayName, "Health checks", StringComparison.OrdinalIgnoreCase);
+        return endpoint != null &&
+               string.Equals(endpoint.DisplayName, "Health checks", StringComparison.OrdinalIgnoreCase);
     }
 }
