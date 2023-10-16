@@ -1,6 +1,5 @@
 ﻿using System.Buffers;
 using System.IO.Pipelines;
-using System.IO;
 using System.Text;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
@@ -20,9 +19,9 @@ public class LoggingMiddleware
     private const string More = " [more...]";
 
     private readonly RequestDelegate _next;
-    private readonly IOptionsMonitor<LoggingOptions> _options;
+    private readonly IOptionsMonitor<HttpLoggingOptions> _options;
 
-    public LoggingMiddleware(RequestDelegate next, IOptionsMonitor<LoggingOptions> loggingOptions)
+    public LoggingMiddleware(RequestDelegate next, IOptionsMonitor<HttpLoggingOptions> loggingOptions)
     {
         _next = next;
         _options = loggingOptions;

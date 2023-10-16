@@ -1,6 +1,6 @@
 ﻿namespace Adaba.Infrastructure.Logging;
 
-public class LoggingOptions
+public class HttpLoggingOptions
 {
     public string MessageTemplate { get; set; } =
         "Req: \"{RequestMethod} {RequestPath}\", Headers: \"{RequestHeaders}\", Body: \"{RequestBody}\" -> Resp: {StatusCode}, Headers: \"{ResponseHeaders}\", Body: \"{ResponseBody}\", Elapsed: {Elapsed:0.0000}ms";

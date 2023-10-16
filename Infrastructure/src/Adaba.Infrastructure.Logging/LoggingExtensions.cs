@@ -12,7 +12,7 @@ namespace Adaba.Infrastructure.Logging;
 
 public static class LoggingExtensions
 {
-    public static void AddStandardLogging(this WebApplicationBuilder webAppBuilder, string? environment)
+    public static WebApplicationBuilder AddStandardLogging(this WebApplicationBuilder webAppBuilder, string? environment)
     {
         webAppBuilder.Host.UseSerilog((_, _, config) =>
         {
@@ -30,18 +30,20 @@ public static class LoggingExtensions
                 .Enrich.WithProperty("AppVersion", AppVersion.Value.AppVersion)
                 .Enrich.WithProperty("ProductVersion", AppVersion.Value.ProductVersion);
         });
+        return webAppBuilder;
     }
 
-    public static void AddStandardHttpLogging(this WebApplicationBuilder webAppBuilder,
+    public static WebApplicationBuilder AddStandardHttpLogging(this WebApplicationBuilder webAppBuilder,
         string? configSectionName = default)
     {
-        webAppBuilder.Services.Configure<LoggingOptions>(
+        webAppBuilder.Services.Configure<HttpLoggingOptions>(
             webAppBuilder.Configuration.GetSection(configSectionName ?? "HttpLogging"));
+        return webAppBuilder;
     }
 
-    public static void UseStandardHttpLogging(this WebApplication app)
+    public static WebApplication UseStandardHttpLogging(this WebApplication app)
     {
-        var httpLoggingOptions = app.Services.GetRequiredService<IOptions<LoggingOptions>>();
+        var httpLoggingOptions = app.Services.GetRequiredService<IOptions<HttpLoggingOptions>>();
         app.UseSerilogRequestLogging(options =>
         {
             options.IncludeQueryInRequestPath = httpLoggingOptions.Value.IncludeQueryInRequestPath;
@@ -50,6 +52,7 @@ public static class LoggingExtensions
             options.MessageTemplate = httpLoggingOptions.Value.MessageTemplate;
         });
         app.UseMiddleware<LoggingMiddleware>();
+        return app;
     }
 
     private static readonly Lazy<(string AppName, string AppVersion, string ProductVersion)> AppVersion = new(() =>

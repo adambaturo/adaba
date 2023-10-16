@@ -5,7 +5,7 @@ public class LoggingOptionsTests
     [Fact]
     public void WhenOptionsCreated_DefaultValuesShouldBeSet()
     {
-        var sut = new LoggingOptions();
+        var sut = new HttpLoggingOptions();
         Assert.Multiple(() =>
         {
             Assert.Multiple(

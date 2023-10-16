@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaba.Infrastructure.Loggin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaba.Infrastructure.Logging.Tests", "Infrastructure\tests\Adaba.Infrastructure.Logging.Tests\Adaba.Infrastructure.Logging.Tests.csproj", "{30277C06-AD08-4412-A9D2-DB10B7893E55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaba.Infrastructure.Database", "Infrastructure\src\Adaba.Infrastructure.Database\Adaba.Infrastructure.Database.csproj", "{63369B61-C87B-45DC-9F19-5F805B0E7A9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,7 @@ Global
 		{6FB69C0D-7566-4445-94CB-194C2A6AEC68} = {C61C40B8-132C-484E-B311-9E7B6A7B691A}
 		{C38DC1CC-AD24-4282-9405-70569707FB66} = {1401BE4E-5CBC-4113-8924-D6101E7A2693}
 		{30277C06-AD08-4412-A9D2-DB10B7893E55} = {1401BE4E-5CBC-4113-8924-D6101E7A2693}
+		{63369B61-C87B-45DC-9F19-5F805B0E7A9E} = {1401BE4E-5CBC-4113-8924-D6101E7A2693}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FD175AD8-E92A-4B94-A8A2-ED76812520A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -40,5 +43,9 @@ Global
 		{30277C06-AD08-4412-A9D2-DB10B7893E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30277C06-AD08-4412-A9D2-DB10B7893E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30277C06-AD08-4412-A9D2-DB10B7893E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63369B61-C87B-45DC-9F19-5F805B0E7A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63369B61-C87B-45DC-9F19-5F805B0E7A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63369B61-C87B-45DC-9F19-5F805B0E7A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63369B61-C87B-45DC-9F19-5F805B0E7A9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

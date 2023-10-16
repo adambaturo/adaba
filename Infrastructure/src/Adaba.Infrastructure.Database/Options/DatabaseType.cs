@@ -1,4 +1,4 @@
-﻿namespace Cerber.Api.Database.Options;
+﻿namespace Adaba.Infrastructure.Database.Options;
 
 public enum DatabaseType
 {
